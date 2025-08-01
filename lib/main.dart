@@ -33,6 +33,7 @@ class _HomePageState extends State<HomePage> {
   var senhaCache = '';
   var confimSenha = '';
   bool mostrarSenha = false;
+  bool checkTerms = false;
 
   @override
   Widget build(BuildContext context) {
@@ -152,6 +153,19 @@ class _HomePageState extends State<HomePage> {
                 },
               ),
               SizedBox(height: 20),
+              Row(
+                children: [
+                  Checkbox(
+                    value: checkTerms,
+                    onChanged: (v) {
+                      setState(() {
+                        checkTerms = v!;
+                      });
+                    },
+                  ),
+                  Text('Termos de uso'),
+                ],
+              ),
               Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
